@@ -1,4 +1,4 @@
-public class Joueur {
+public class Joueur implements IJoueur, IScore {
     private String nom;
     private int score;
     private String choix;
@@ -29,5 +29,15 @@ public class Joueur {
 
     public void setScore(int score) {
         this.score = score;
+    }
+
+    @Override
+    public boolean estGagnant() {
+        return false;
+    }
+
+    @Override
+    public int vaut() {
+        return 0;
     }
 }

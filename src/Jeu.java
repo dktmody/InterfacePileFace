@@ -1,10 +1,13 @@
 import java.util.Scanner;
-public class Jeu {
+public class Jeu implements IJeu {
 
     public static final String QUI_JOUE = "Quel est le nom du joueur ";
 
+    public Jeu() {
+        demarrerJeu();
+    }
 
-    public static void lancerJeu(){
+    public void demarrerJeu(){
         char commenceJeux = 'o';
         char saisiUtilisateur;
         int result;
@@ -33,6 +36,7 @@ public class Jeu {
         }else {
             System.out.println("match nul, vous avez tous les deux le même nombre de points!");
         }
+
     }
     public static void start(Joueur joueur1, Joueur joueur2){
         Scanner sc = new Scanner(System.in);
@@ -46,6 +50,7 @@ public class Jeu {
         String fav= sc.nextLine();
         if (fav.equals("n")){
             String lancePileFace = lancerPiece();
+
             if (joueur1.getChoix().equals(lancePileFace) ){
                 joueur1.setScore(joueur1.getScore() +1);
             }
